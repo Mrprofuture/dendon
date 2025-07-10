@@ -1,36 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login Page</title>
-  <style src="style.css">
-   
+  <meta charset="UTF-8">
+  <title>XTOVIA Bond-Repair Technology Carousel</title>
+  <meta name="viewport" content="width=500, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0; font-family: 'Inter', Arial, sans-serif; background: #f8f6f4;
+      color: #222; 
+    }
+    .carousel {
+      display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+      width: 500px; /* IG post width */
+      max-width: 100vw;
+      margin: 0 auto;
+      border-radius: 24px;
+      box-shadow: 0 2px 24px 0 rgba(0,0,0,0.07);
+    }
+    .slide {
+      flex: none; width: 500px; height: 500px; 
+      box-sizing: border-box; padding: 36px 36px 28px 36px;
+      scroll-snap-align: start;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #fff;
+      margin-right: 8px;
+      border-radius: 24px;
+      position: relative;
+    }
+    .cover-title {
+      font-size: 2.2rem; font-weight: 700; margin-bottom: 14px; letter-spacing: -1px;
+      color: #a77eb1;
+      text-align: center;
+    }
+    .subtitle { 
+      font-size: 1.15rem; color: #666; margin-bottom: 0.5em; text-align: center;
+    }
+    .hair-strand {
+      width: 140px; height: 140px; margin: 0 auto 18px auto;
+      display: block;
+    }
+    .diagram {
+      width: 220px; height: 120px; margin: 18px auto;
+      display: block;
+    }
+    .cta {
+      margin-top: 40px; font-weight: 600; color: #a77eb1;
+      font-size: 1.1rem; text-align: center;
+    }
+    .brand-logo {
+      position: absolute; bottom: 32px; right: 36px; opacity: 0.20; font-size: 2.4rem;
+      font-weight: 900; letter-spacing: -2px;
+    }
+    @media (max-width: 600px) {
+      .carousel, .slide { width: 100vw; max-width: 100vw; }
+    }
   </style>
 </head>
 <body>
-  
-  <div class="login-container" role="main">
-    <h2>Welcome Back</h2>
-    <form id="loginForm" novalidate>
-      <div>
-        <input type="text" id="username" name="username" placeholder="Username or Email" aria-label="Username or Email" required />
-        <div class="error" id="usernameError"></div>
-      </div>
-      <div>
-        <input type="Password" id="Password" name="Password" placeholder="Password" aria-label="Password" required minlength="6" />
-        <div class="error" id="passwordError"></div>
-      </div>
-      <button type="submit">Log In</button>
-    </form>
-    <div class="footer-text">
-      Don't have an account? <a href="#">Sign up</a>
-    </div>
-  </div>
+  <div class="carousel">
 
-  <script scr="style.js">
-    
-  </script>
+    <!-- Slide 1: Cover -->
+    <section class="slide">
+      <!-- Custom illustration: glowing hair strand -->
+      <svg class="hair-strand" viewBox="0 0 140 140" fill="none">
+        <ellipse cx="70" cy="70" rx="38" ry="68" fill="#fff9fb" stroke="#d2b6e3" stroke-width="5"/>
+        <path d="M70,130 Q90,95 70,10 Q45,75 70,130" stroke="#a77eb1" stroke-width="4" fill="none"/>
+        <circle cx="70" cy="30" r="12" fill="#ffe7f3" opacity="0.6"/>
+        <circle cx="70" cy="70" r="30" fill="#e9d8f4" opacity="0.12"/>
+      </svg>
+      <div class="cover-title">Stronger Hair, Backed by Science</div>
+      <div class="subtitle">
+        Introducing XTOVIA’s Patented Bond-Repair Technology<br>
+        <em>Where innovation meets beauty—for your healthiest hair yet.</em>
+      </div>
+      <div class="brand-logo">XTOVIA</div>
+    </section>
+
+    <!-- Slide 2: The Problem -->
+    <section class="slide">
+      <svg class="diagram" viewBox="0 0 220 120">
+        <!-- Hair with cracks -->
+        <rect x="80" y="10" width="60" height="100" rx="28" fill="#f6f0fa" stroke="#d2b6e3" stroke-width="3"/>
+        <path d="M110,25 l0,70" stroke="#b484b6" stroke-width="3"/>
+        <path d="M110,40 l10,14" stroke="#c36e99" stroke-width="2"/>
+        <path d="M110,60 l-12,14" stroke="#c36e99" stroke-width="2"/>
+        <!-- Icons: heat, color, pollution -->
+        <circle cx="40" cy="30" r="16" fill="#ffe7f3" />
+        <text x="35" y="37" font-size="20" fill="#b484b6">&#9889;</text>
+        <circle cx="40" cy="90" r="16" fill="#e9d8f4" />
+        <text x="33" y="97" font-size="18" fill="#a77eb1">&#127912;</text>
+        <circle cx="180" cy="40" r="16" fill="#f6e7fc" />
+        <text x="172" y="48" font-size="20" fill="#c36e99">&#9729;</text>
+      </svg>
+      <div style="font-size:1.3rem;font-weight:600;text-align:center;margin-bottom:10px;">
+        Everyday Damage, Invisible Weakness
+      </div>
+      <div class="subtitle">
+        Daily stressors break tiny bonds inside your hair, making it weak, dull, or frizzy.<br>
+        <em>But what if you could heal from within?</em>
+      </div>
+    </section>
+
+    <!-- Slide 3: The Science -->
+    <section class="slide">
+      <svg class="diagram" viewBox="0 0 220 120">
+        <!-- Broken bonds -->
+        <g>
+          <circle cx="55" cy="60" r="20" fill="#e9d8f4" />
+          <rect x="55" y="45" width="48" height="30" fill="#fff" opacity="0.7"/>
+          <rect x="75" y="55" width="10" height="5" fill="#c36e99"/>
+        </g>
+        <g>
+          <circle cx="165" cy="60" r="20" fill="#fff9fb" />
+          <rect x="165" y="45" width="48" height="30" fill="#fff" opacity="0.7"/>
+          <!-- Repaired: puzzle piece icon -->
+          <path d="M185,70 l10,-10 l10,10 l-10,10z" fill="#a77eb1" opacity="0.7"/>
+        </g>
+        <text x="25" y="110" font-size="14" fill="#b484b6">Broken Bonds</text>
+        <text x="135" y="110" font-size="14" fill="#a77eb1">Repaired Bonds</text>
+      </svg>
+      <div style="font-size:1.15rem;line-height:1.6;text-align:center;">
+        Hair’s strength comes from millions of invisible bonds.<br>
+        When these bonds break, hair loses its shape and shine.<br>
+        <b>XTOVIA’s technology targets these bonds at the molecular level.</b>
+      </div>
+    </section>
+
+    <!-- Slide 4: Our Solution -->
+    <section class="slide">
+      <svg class="diagram" viewBox="0 0 220 120">
+        <!-- Hair strand -->
+        <ellipse cx="110" cy="60" rx="60" ry="40" fill="#fff9fb" stroke="#d2b6e3" stroke-width="3"/>
+        <!-- Molecule icon traveling -->
+        <circle cx="60" cy="60" r="10" fill="#ffe7f3" />
+        <circle cx="110" cy="60" r="10" fill="#a77eb1" opacity="0.8"/>
+        <line x1="60" y1="60" x2="110" y2="60" stroke="#a77eb1" stroke-width="3" stroke-dasharray="5,6"/>
+        <!-- Glow for repair -->
+        <circle cx="110" cy="60" r="22" fill="#a77eb1" opacity="0.15"/>
+      </svg>
+      <div style="font-size:1.2rem;font-weight:600;text-align:center;margin-bottom:10px;">
+        XTOVIA Works Deep
+      </div>
+      <div class="subtitle">
+        Our patented molecules find and repair broken bonds, restoring strength and resilience from the inside out.<br>
+        <em>Think of it as a luxury spa for every strand.</em>
+      </div>
+    </section>
+
+    <!-- Slide 5: Emotional Close & CTA -->
+    <section class="slide">
+      <!-- Confident woman silhouette and logo overlay -->
+      <svg class="hair-strand" viewBox="0 0 140 140" fill="none">
+        <ellipse cx="70" cy="72" rx="42" ry="62" fill="#fff9fb" stroke="#d2b6e3" stroke-width="3"/>
+        <path d="M45,120 Q70,80 95,120" stroke="#a77eb1" stroke-width="5" fill="none"/>
+        <path d="M62,80 Q70,60 78,80" stroke="#b484b6" stroke-width="2" fill="none"/>
+        <!-- Minimal face outline -->
+        <circle cx="70" cy="65" r="18" fill="#f6e7fc" opacity="0.5"/>
+        <ellipse cx="70" cy="70" rx="10" ry="15" fill="#fff" opacity="0.9"/>
+      </svg>
+      <div class="cover-title" style="font-size:1.6rem;letter-spacing:0;">
+        Science, Confidence, You
+      </div>
+      <div class="subtitle">
+        <b>Feel the science. See the difference.</b><br>
+        Save &amp; share to empower your hair-obsessed friends!<br>
+        <span style="color:#a77eb1;">#XTOVIAscience #StrongerWithXTOVIA</span>
+      </div>
+      <div class="brand-logo">XTOVIA</div>
+    </section>
+
+  </div>
 </body>
 </html>
-
